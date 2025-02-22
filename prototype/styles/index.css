@@ -1,13 +1,26 @@
+body {
+  background: linear-gradient(-45deg, white, #d6d6d6, white, #d6d6d6);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .content {
   margin: 0;
   height: 100vh;
   align-items: center;
-}
-
-.content_graph {
-  background-image: url("../images/graph.png");
-  background-repeat: no-repeat;
-  background-position: right top;
 }
 
 .row {
@@ -34,6 +47,7 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 5%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .title > h1 {
@@ -64,6 +78,10 @@
 
 .title h2 {
   animation-delay: 0.3s;
+}
+
+.title:hover {
+  transform: scaleY(1.05);
 }
 
 @keyframes fadeIn {
