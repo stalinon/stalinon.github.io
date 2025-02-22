@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
-    <!-- Подключение стилей с использованием Hugo's relURL -->
-    <link rel="stylesheet" href="{{ "css/index.css" | relURL }}" /> <link
-    rel="stylesheet" href="{{ "css/normalize.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "css/index.css" | absURL }}" /> <link
+    rel="stylesheet" href="{{ "css/normalize.css" | absURL }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
