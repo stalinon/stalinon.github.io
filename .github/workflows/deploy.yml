@@ -43,7 +43,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
-          hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.repository }}"
+          hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
