@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on My New Hugo Site</title>
+    <link>http://localhost:1313/portfolio/</link>
+    <description>Recent content in Portfolios on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beer Economy</title>
+      <link>http://localhost:1313/portfolio/beer-economy/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/beer-economy/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/project_image_lrg.png&#34; alt=&#34;Beer Economy Image&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Beer Economy&lt;/strong&gt; is a unique platform designed for beer enthusiasts who want to combine the enjoyment of beer tasting with the thrilling world of price analysis, trading, and finance. Inspired by the dynamic world of trading, our website allows you to track beer prices across various stores, view price changes over time, analyze historical data, and use various technical analysis tools to determine the best times to buy.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
