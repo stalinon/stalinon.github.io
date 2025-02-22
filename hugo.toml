@@ -1,0 +1,4 @@
+baseURL = 'https://stalinon.github.io/'
+languageCode = 'en-us'
+title = 'Egor Fedorov Resume'
+publishDir = "public" # это указывает на каталог для публикации сгенерированного контента
