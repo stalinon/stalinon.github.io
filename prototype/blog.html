@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Egor Fedorov</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/card_list.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="row">
+        <div class="column"></div>
+        <nav>
+          <a href="./index.html">Main</a>
+          <a href="./about_me.html">About me</a>
+          <a href="./portfolio.html">Portfolio</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contacts.html">Contacts</a>
+        </nav>
+        <div class="column"></div>
+      </div>
+      <div class="row">
+        <div class="column"></div>
+        <div class="title">
+          <h1>Blog</h1>
+        </div>
+        <div class="column"></div>
+      </div>
+      <div class="page_content">
+        <div class="column"></div>
+        <div class="card_list">
+          <div class="card_list__card" onclick="redirectToArticle()">
+            <div class="card_list__card__image">
+              <img src="./images/project_image.png" />
+            </div>
+            <div class="card_list__card__description">
+              <div class="card_list__card__description__title">
+                Example Article
+              </div>
+              <div class="card_list__card__description__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a
+                mi fermentum, porttitor odio nec, iaculis eros. In vitae
+                porttitor dui. Nullam nec erat augue. Integer id magna nec ex
+                fringilla consectetur. Cras mattis sodales sem porta consequat.
+                Nunc pulvinar nibh ac lectus posuere fermentum. Nam iaculis
+                lobortis neque, non rutrum justo maximus vel. Suspendisse erat
+                urna, blandit vitae dolor eu, gravida egestas tellus. Proin
+                fringilla lobortis tellus quis fringilla. Vestibulum ante ipsum
+                primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Morbi sed ex tempor, gravida ex quis, egestas turpis. Sed
+                non libero ullamcorper, auctor enim non, interdum.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+
+    <script>
+      function redirectToArticle() {
+        window.location.href = "./article.html";
+      }
+    </script>
+  </body>
+</html>
