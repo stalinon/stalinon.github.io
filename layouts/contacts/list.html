@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="page_content">
+    <div class="column"></div>
+    <div class="contacts">
+        <p class="contacts__message">
+            {{ .Params.description }}
+        </p>
+        {{ range .Params.contacts }}
+        <div class="contacts__item" data-tooltip="{{ .type }}">
+            <img src="{{ "images/" | relURL }}{{ .icon }}" alt="{{ .type }}">
+            <label>{{ .value }}</label>
+        </div>
+        {{ end }}
+    </div>
+    <div class="column"></div>
+</div>
+{{ end }}

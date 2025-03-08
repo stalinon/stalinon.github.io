@@ -1,0 +1,121 @@
+{{ define "main" }}
+
+<div class="column"></div>
+        
+<div class="page_content__half right_border">
+    <h3>{{ .Params.header_description }}</h3>
+    <p>{{ .Params.description }}</p>
+
+    <h3>{{ .Params.header_technologies }}</h3>
+    <div class="page_content__half__stack">
+        <div class="tech-carousel">
+            <div class="tech-carousel__track">
+                <div class="tech-carousel__content">
+                    {{ range .Params.technologies_first }}
+                    <div class="tech-carousel__track__item">
+                        <img src="{{ "images/" | relURL }}{{ .img }}" alt="{{ .name }}">
+                        <label>{{ .name }}</label>
+                    </div>
+                    {{ end }}
+                </div>                        
+            </div>
+          </div>              
+          <div class="tech-carousel">
+            <div class="tech-carousel__track">
+                <div class="tech-carousel__content">
+                    {{ range .Params.technologies_second }}
+                    <div class="tech-carousel__track__item">
+                        <img src="{{ "images/" | relURL }}{{ .img }}" alt="{{ .name }}">
+                        <label>{{ .name }}</label>
+                    </div>
+                    {{ end }}
+                </div>                        
+            </div>
+          </div>                    
+      </div>
+</div>
+
+<div class="page_content__half left_border">
+    <h3>{{ .Params.header_description }}</h3>
+    <h4>{{ .Params.header_work }}</h4>
+    <div class="timeline">
+        <ul>
+            {{ range .Params.experience }}
+            <li>
+                <div class="timeline__icon">✔</div>
+                <div class="timeline__content">
+                  <h3>{{ .company }}</h3>
+                  <span class="timeline__content__date">{{ .period }}</span>
+                  <p>{{ .description }}</p>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    <h4>{{ .Params.header_education }}</h4>
+    <div class="timeline margin_bottom">
+        <ul>
+            {{ range .Params.education }}
+            <li>
+                <div class="timeline__icon">✔</div>
+                <div class="timeline__content">
+                  <h3>{{ .degree }}</h3>
+                  <span class="timeline__content__date">{{ .period }}</span>
+                  <p>{{ .institution }}</p>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+<div class="column"></div>
+
+<script>
+    // Получаем все элементы с классом 'tech-carousel'
+    const carousels = document.querySelectorAll('.tech-carousel');
+
+    carousels.forEach(carousel => {
+    const track = carousel.querySelector('.tech-carousel__track');
+    const content = carousel.querySelector('.tech-carousel__content');
+
+    // Дублируем контент для бесшовного прокручивания
+    const contentClone = content.cloneNode(true);
+    track.appendChild(contentClone);
+
+    // Настроим анимацию с помощью JS
+    let scrollSpeed = 0.7; // Скорость прокрутки, можно настроить
+    let scrollDistance = 0; // Начальное смещение
+
+    function animateCarousel() {
+        scrollDistance += scrollSpeed;
+        
+        // Если карусель прошла полностью, вернуться к началу
+        if (scrollDistance >= content.offsetWidth) {
+        scrollDistance = 0;
+        }
+
+        track.style.transform = `translateX(-${scrollDistance}px)`;
+
+        // Повторить анимацию
+        requestAnimationFrame(animateCarousel);
+    }
+
+    // Запускаем анимацию для текущей карусели
+    animateCarousel();
+
+    const timelineItems = document.querySelectorAll('.timeline__content');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    timelineItems.forEach(item => observer.observe(item));
+    });
+</script>
+
+{{ end }}

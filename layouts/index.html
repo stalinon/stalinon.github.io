@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="{{ "css/index.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/normalize.css" | relURL }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="content">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
+            <div class="column"></div>
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+                <h2>{{ .Params.subtitle }}</h2>
+            </div>
+            <div class="column"></div>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        {{ partial (print "partials/" .Site.Language.Lang "/nav.html") . }}
+</body>
+</html>

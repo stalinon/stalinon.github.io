@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="page_content">
+    <div class="column"></div>
+    <div class="card_list">
+        {{ if .Params.articles }}
+            {{ range .Params.articles }}
+            <div class="card_list__card" onclick="redirectToArticle('{{ .slug | relURL }}')">
+                <div class="card_list__card__image">
+                    <img src="{{ "images/" | relURL }}{{ .image }}" alt="{{ .title }}">
+                </div>
+                <div class="card_list__card__description">
+                    <div class="card_list__card__description__title">
+                        {{ .title }}
+                    </div>
+                    <div class="card_list__card__description__text">
+                        {{ .description | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        {{ else }}
+            <p>There's no articles yet available.</p>
+        {{ end }}
+    </div>
+    <div class="column"></div>
+</div>
+
+<script>
+    function redirectToArticle(address) {
+        window.location.href = address;
+    }
+</script>
+{{ end }}

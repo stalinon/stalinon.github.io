@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <div class="page_content">
+        <div class="column"></div>
+        <div class="card_list">
+            {{ range .Params.projects }}
+            <div class="card_list__card" onclick="redirectToArticle('{{ .slug }}')">
+                <div class="card_list__card__image">
+                    <img src="{{ "images/" | relURL }}{{ .image }}" alt="{{ .title }}">
+                </div>
+                <div class="card_list__card__description">
+                    <div class="card_list__card__description__title">
+                        {{ .title }}
+                    </div>
+                    <div class="card_list__card__description__text">
+                        {{ .description | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="column"></div>
+
+        <script>
+            function redirectToArticle(address) {
+                window.location.href = address;
+            }
+        </script>
+    </div>
+{{ end }}

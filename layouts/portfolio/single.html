@@ -1,54 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="{{ "css/index.css" | absURL }}" /> <link
-    rel="stylesheet" href="{{ "css/normalize.css" | absURL }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </head>
-  <body>
-    <div class="content">
-      <div class="row">
-        <div class="column"></div>
-        <nav>
-          <a href="/index.html">Main</a>
-          <a href="/about_me.html">About me</a>
-          <a href="/portfolio.html">Portfolio</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/contacts.html">Contacts</a>
-        </nav>
-        <div class="column"></div>
-      </div>
-      <div class="row">
-        <div class="column"></div>
-        <div class="title">
-          <h1>{{ .Title }}</h1>
-          <!-- Заголовок статьи -->
-        </div>
-        <div class="column"></div>
-      </div>
-      <div class="page_content">
-        <div class="column"></div>
-        <div class="article">
-          <div class="content-body">
-            {{ .Content }}
-            <!-- Контент статьи -->
-          </div>
-        </div>
-        <div class="column"></div>
-      </div>
-    </div>
-  </body>
-</html>
+{{ define "main" }}
+<div class="project-image">
+    <img src="{{ "images/" | relURL }}{{ .Params.image }}" alt="{{ .Title }}">
+</div>
+
+<!-- Блок с бейджиками-ссылками -->
+<div class="badges">
+    {{ range .Params.badges }}
+    <a href="{{ .url }}" class="badge" target="_blank">{{ .name }}</a>
+    {{ end }}
+</div>
+
+<!-- Контент проекта -->
+<div class="article">
+    {{ .Content }}
+</div>
+
+<style>
+    body {
+        overflow: auto;
+    }
+
+    .page_content {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .project-image {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 1600px;
+    }
+
+    .project-image img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .badges {
+        display: flex;
+        width: 1600px;
+        gap: 10px;
+        margin: 0 20px;
+        justify-content: space-evenly;
+    }
+
+    .badge {
+        background-color: #000;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        width: 200px;
+        text-align: center;
+    }
+
+    .badge:hover {
+        background-color: #444;
+    }
+
+    .article {
+        max-width: 1200px;
+        padding: 20px;
+        font-size: 18px;
+        line-height: 1.6;    
+        margin: 20px auto;
+        background: white;
+    }
+
+    .content {
+        margin-bottom: 10%;
+    }
+
+    /* Добавляем адаптивность */
+    @media (max-width: 1024px) {
+        .content {
+            max-width: 90%;
+            padding: 15px;
+        }
+
+        .project-image {
+            width: 1000px;
+        }
+
+        .badges {
+            width: 1000px;
+        }
+
+        .badge {
+            width: 80%;
+            text-align: center;
+        }
+
+        .article {
+            font-size: 16px;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            max-width: 95%;
+        }
+
+        .project-image {
+            width: 700px;
+        }
+
+        .badges {
+            flex-direction: column;
+            width: 700px;
+        }
+
+        .badge {
+            width: 100%;
+            text-align: center;
+        }
+
+        .article {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .content {
+            padding: 10px;
+        }
+
+        .project-image {
+            width: 400px;
+        }
+
+        .article {
+            font-size: 14px;
+        }
+
+        .badges {
+            flex-direction: column;
+            width: 400px;
+        }
+
+        .badge {
+            width: 100%;
+        }
+    }
+</style>
+{{ end }}
