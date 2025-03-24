@@ -2,6 +2,11 @@
 title: "Portfolio"
 
 projects:
+  - title: "Rudi Mental"
+    slug: "rudimental"
+    image: "rudimental.png"
+    description: |
+      Rudi Mental is an interactive metronome with visualization of notes and exercises for drummers.
   - title: "TrackIt"
     slug: "trackit"
     image: "trackit_logo.png"
