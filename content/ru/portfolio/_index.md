@@ -2,6 +2,11 @@
 title: "Портфолио"
 
 projects:
+  - title: "Rudi Mental"
+    slug: "rudimental"
+    image: "rudimental.png"
+    description: |
+      Rudi Mental — это интерактивный метроном с визуализацией нот и упражнениями для барабанщиков.
   - title: "TrackIt"
     slug: "trackit"
     image: "trackit_logo.png"
