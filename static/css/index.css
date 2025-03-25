@@ -385,6 +385,15 @@ nav a:hover:after {
   font-size: 14px;
 }
 
+table {
+  align-self: center;
+}
+
+th {
+  text-align: left;
+  padding-right: 100px;
+}
+
 /* Медиа-запросы */
 @media (max-width: 1024px) {
   body {

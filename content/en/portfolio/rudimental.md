@@ -14,6 +14,31 @@ The app is built with React, using **Tone.js** for metronome sound generation, *
 
 ---
 
+## Plan
+
+| Status   | Priority  | Task                                                                                   |
+|----------|-----------|----------------------------------------------------------------------------------------|
+| ✅ Done   | High      | ~~Basic metronome implementation~~                                                         |
+| ✅ Done   | Medium    | ~~Cycle of "sound bars — silent bars" for internal timing training~~                       |
+| ✅ Done   | Medium    | ~~Light/dark theme toggle~~                                                                |
+| ✅ Done   | Medium    | ~~Displaying notation for exercises~~                                                      |
+| 🛠️ To Do | High      | Switch to SVG notation from Groove Scribe                                              |
+| 🛠️ To Do | Medium    | Highlight quarter notes in sync with metronome                                         |
+| 🛠️ To Do | Medium    | Allow users to add their own exercises via links (stored in localStorage)              |
+| 🛠️ To Do | Medium    | Expand exercise library                                                                |
+| 🛠️ To Do | Low       | Shared storage of exercises (e.g., via Google Sheets API without backend)              |
+| 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
+| 🕗 Backlog | Medium  | Categorization/tagging of exercises                                                    |
+| 🕗 Backlog | Medium  | Export of exercises as PDF                                                             |
+| 🕗 Backlog | Low     | Progressive training: tempo increase, time signature changes                          |
+| 🕗 Backlog | Low     | MIDI controller support                                                                |
+| 🕗 Backlog | Low     | Training progress chart/visualization                                                  |
+| 🕗 Backlog | Low     | Visual tempo representation through color                                              |
+| 🕗 Backlog | Low     | Import/export presets via JSON/links                                                   |
+| 🕗 Backlog | Low     | Offline support (PWA mode)                                                              |
+
+---
+
 ## Key Features
 
 ### Visual Metronome
