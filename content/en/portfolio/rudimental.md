@@ -8,9 +8,9 @@ badges:
     url: "https://github.com/stalinon/rudi-mental"
 ---
 
-**Rudi Mental** is a web application for drummers that combines a metronome with a rudiment training tool. It plays rhythm patterns with visual beat indicators, supports tempo, time signature, and exercise customization, and includes "sound/silence" cycle modes. It features real-time note rendering via **VexFlow**, accent control, and interactive metronome behavior.
+**Rudi Mental** is a web application for drummers that combines a metronome with a rudiment training tool. It plays rhythm patterns with visual beat indicators, supports tempo, time signature, and exercise customization, and includes "sound/silence" cycle modes. It features real-time note rendering via ~~**VexFlow**~~ ABCJS, accent control, and interactive metronome behavior.
 
-The app is built with React, using **Tone.js** for metronome sound generation, **MUI** for UI components, and **VexFlow** for musical notation rendering.
+The app is built with React, using **Tone.js** for metronome sound generation, **MUI** for UI components, and ~~**VexFlow**~~ ABCJS for musical notation rendering.
 
 ---
 
@@ -22,14 +22,14 @@ The app is built with React, using **Tone.js** for metronome sound generation, *
 | ✅ Done   | Medium    | ~~Cycle of "sound bars — silent bars" for internal timing training~~                       |
 | ✅ Done   | Medium    | ~~Light/dark theme toggle~~                                                                |
 | ✅ Done   | Medium    | ~~Displaying notation for exercises~~                                                      |
-| 🛠️ To Do | High      | Switch to SVG notation from Groove Scribe                                              |
-| 🛠️ To Do | Medium    | Highlight quarter notes in sync with metronome                                         |
+| 🛠️ To Do | High      | ~~Switch to SVG notation from Groove Scribe~~                                              |
 | 🛠️ To Do | Medium    | Allow users to add their own exercises via links (stored in localStorage)              |
 | 🛠️ To Do | Medium    | Expand exercise library                                                                |
 | 🛠️ To Do | Low       | Shared storage of exercises (e.g., via Google Sheets API without backend)              |
 | 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
 | 🕗 Backlog | Medium  | Categorization/tagging of exercises                                                    |
 | 🕗 Backlog | Medium  | Export of exercises as PDF                                                             |
+| 🕗 Backlog | Medium    | Highlight quarter notes in sync with metronome                                         |
 | 🕗 Backlog | Low     | Progressive training: tempo increase, time signature changes                          |
 | 🕗 Backlog | Low     | MIDI controller support                                                                |
 | 🕗 Backlog | Low     | Training progress chart/visualization                                                  |
