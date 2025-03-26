@@ -23,7 +23,7 @@ The app is built with React, using **Tone.js** for metronome sound generation, *
 | ✅ Done   | Medium    | ~~Light/dark theme toggle~~                                                                |
 | ✅ Done   | Medium    | ~~Displaying notation for exercises~~                                                      |
 | ✅ Done | High      | ~~Switch to SVG notation from Groove Scribe~~                                              |
-| 🛠️ To Do | Medium    | Allow users to add their own exercises via links (stored in localStorage)              |
+| ✅ Done | Medium    | ~~Allow users to add their own exercises via links (stored in localStorage)~~              |
 | 🛠️ To Do | Medium    | Expand exercise library                                                                |
 | 🛠️ To Do | Low       | Shared storage of exercises (e.g., via Google Sheets API without backend)              |
 | 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
