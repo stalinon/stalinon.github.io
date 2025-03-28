@@ -24,13 +24,13 @@ The app is built with React, using **Tone.js** for metronome sound generation, *
 | ✅ Done   | Medium    | ~~Displaying notation for exercises~~                                                      |
 | ✅ Done | High      | ~~Switch to SVG notation from Groove Scribe~~                                              |
 | ✅ Done | Medium    | ~~Allow users to add their own exercises via links (stored in localStorage)~~              |
+| ✅ Done | Low       | ~~Shared storage of exercises (e.g., via Google Sheets API without backend)~~              |
 | 🛠️ To Do | Medium    | Expand exercise library                                                                |
-| 🛠️ To Do | Low       | Shared storage of exercises (e.g., via Google Sheets API without backend)              |
-| 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
+| 🛠️ To Do | Medium    | Highlight quarter notes in sync with metronome                                         |
+| 🛠️ To Do | Low     | Progressive training: tempo increase, time signature changes                          |
 | 🕗 Backlog | Medium  | Categorization/tagging of exercises                                                    |
+| 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
 | 🕗 Backlog | Medium  | Export of exercises as PDF                                                             |
-| 🕗 Backlog | Medium    | Highlight quarter notes in sync with metronome                                         |
-| 🕗 Backlog | Low     | Progressive training: tempo increase, time signature changes                          |
 | 🕗 Backlog | Low     | MIDI controller support                                                                |
 | 🕗 Backlog | Low     | Training progress chart/visualization                                                  |
 | 🕗 Backlog | Low     | Visual tempo representation through color                                              |
