@@ -2,7 +2,13 @@
 <html lang="{{ .Site.Language.Lang }}">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Description }}">
+    <meta property="og:title" content="{{ .Title }} | Бэкенд-разработчик .NET">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+
     <title>{{ .Title }}</title>
     <link rel="stylesheet" href="{{ "css/index.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/normalize.css" | relURL }}">
