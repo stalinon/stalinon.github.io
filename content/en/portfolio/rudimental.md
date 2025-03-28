@@ -25,8 +25,8 @@ The app is built with React, using **Tone.js** for metronome sound generation, *
 | ✅ Done | High      | ~~Switch to SVG notation from Groove Scribe~~                                              |
 | ✅ Done | Medium    | ~~Allow users to add their own exercises via links (stored in localStorage)~~              |
 | ✅ Done | Low       | ~~Shared storage of exercises (e.g., via Google Sheets API without backend)~~              |
+| ✅ Done | Medium    | ~~Highlight quarter notes in sync with metronome~~                                         |
 | 🛠️ To Do | Medium    | Expand exercise library                                                                |
-| 🛠️ To Do | Medium    | Highlight quarter notes in sync with metronome                                         |
 | 🛠️ To Do | Low     | Progressive training: tempo increase, time signature changes                          |
 | 🕗 Backlog | Medium  | Categorization/tagging of exercises                                                    |
 | 🕗 Backlog | Medium  | Auto-evaluation of timing using mic or MIDI                                            |
