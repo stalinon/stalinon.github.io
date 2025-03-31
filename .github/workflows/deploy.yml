@@ -1,10 +1,9 @@
-name: Deploy Hugo site to Pages
+name: 🚀 Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-
-  workflow_dispatch:
+    branches: [ "main" ] # Основная ветка для прода
+  workflow_dispatch: # Возможность ручного запуска
 
 permissions:
   contents: read
@@ -13,53 +12,68 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Build job
   build:
+    name: 🛠 Build Hugo site
     runs-on: ubuntu-latest
+
     env:
       HUGO_VERSION: 0.128.0
+
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Build the site with Hugo
+
+      - name: 🔧 Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          hugo version
+
+      - name: 🧵 Install Dart Sass (for Hugo Pipes)
+        run: sudo snap install dart-sass
+
+      - name: 📦 Install Node.js dependencies (if any)
+        run: |
+          if [[ -f package-lock.json || -f npm-shrinkwrap.json ]]; then
+            echo "Found package lock – installing Node dependencies"
+            npm ci
+          else
+            echo "No Node.js dependencies to install"
+          fi
+
+      - name: ⚙️ Build the site with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
           hugo --minify --baseURL "https://${{ github.repository_owner }}.github.io/"
-      - name: Upload artifact
+
+      - name: 📂 List contents of public/ (debug helper)
+        run: ls -alh public/
+
+      - name: 📤 Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # Deployment job
   deploy:
+    name: 🚚 Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          branch: gh-pages
-          folder: ./public
